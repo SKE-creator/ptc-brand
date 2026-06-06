@@ -9,94 +9,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --ink:   #1A1612;
-      --clay:  #C26244;
-      --cream: #FAF8F5;
-      --linen: #F0EBE3;
-      --stone: #8A7D74;
-      --white: #FFFFFF;
-    }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--linen); color: var(--ink); padding: 56px 40px 100px; }
-
-    .page-header { margin-bottom: 60px; padding-bottom: 24px; border-bottom: 1px solid rgba(26,22,18,0.12); }
-    .page-header__back { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--clay); text-decoration: none; display: inline-block; margin-bottom: 16px; }
-    .page-header__back:hover { opacity: 0.7; }
-    .page-header__eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--stone); margin-bottom: 8px; }
-    .page-header__title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 8px; }
-    .page-header__desc { font-size: 13px; color: var(--stone); line-height: 1.7; max-width: 600px; }
-
-    .change-banner { background: var(--ink); color: var(--cream); border-radius: 8px; padding: 16px 20px; margin-bottom: 40px; font-size: 12px; line-height: 1.7; }
-    .change-banner strong { color: var(--clay); }
-
-    .section { margin-bottom: 72px; }
-    .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--stone); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(26,22,18,0.08); }
-
-    .logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-    .logo-tile { border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 200px; position: relative; }
-    .logo-tile__label { position: absolute; bottom: 10px; right: 14px; font-size: 8.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.35; }
-    .logo-tile--cream { background: var(--cream); }
-    .logo-tile--cream .logo-tile__label { color: var(--ink); }
-    .logo-tile--white { background: var(--white); border: 1px solid rgba(26,22,18,0.06); }
-    .logo-tile--white .logo-tile__label { color: var(--ink); }
-    .logo-tile--ink { background: var(--ink); }
-    .logo-tile--ink .logo-tile__label { color: rgba(250,248,245,0.4); }
-    .logo-tile--clay { background: var(--clay); }
-    .logo-tile--clay .logo-tile__label { color: rgba(250,248,245,0.5); }
-
-    /* WM-1 */
-    .wm1 { font-family: 'Manrope', sans-serif; font-weight: 600; line-height: 1; }
-    .wm1__period { color: var(--clay); }
-
-    /* WM-2 */
-    .wm2 { display: flex; flex-direction: column; align-items: flex-start; line-height: 0.9; }
-    .wm2__plain { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 4.5px; }
-    .wm2__terms { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: -1px; }
-    .wm2__rule { height: 1px; background: var(--clay); opacity: 0.45; margin-top: 10px; align-self: stretch; }
-
-    /* MG-2 */
-    .mg2 { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    .mg2__square { border-radius: 14px; display: flex; align-items: center; justify-content: center; }
-    .mg2__letters { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: -3px; line-height: 1; color: var(--cream); }
-    .mg2__label { font-family: 'Inter', sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: 0.26em; color: var(--clay); }
-
-    /* Scale */
-    .scale-row { display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap; background: var(--white); border-radius: 10px; padding: 36px; border: 1px solid rgba(26,22,18,0.06); }
-    .scale-item { display: flex; flex-direction: column; gap: 10px; }
-    .scale-item + .scale-item { border-left: 1px solid rgba(26,22,18,0.08); padding-left: 40px; }
-    .scale-label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); }
-
-    /* Color */
-    .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-    .color-swatch { border-radius: 8px; overflow: hidden; }
-    .color-swatch__chip { height: 80px; }
-    .color-swatch__info { padding: 12px; background: var(--white); border: 1px solid rgba(26,22,18,0.06); border-top: none; }
-    .color-swatch__name { font-size: 11px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
-    .color-swatch__hex { font-size: 10px; font-family: monospace; color: var(--stone); margin-bottom: 4px; }
-    .color-swatch__use { font-size: 10px; color: var(--stone); line-height: 1.4; }
-
-    /* Applications */
-    .card-scene { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; padding: 48px; background: var(--stone); border-radius: 12px; }
-    .biz-card { width: 420px; height: 240px; border-radius: 6px; flex-shrink: 0; box-shadow: 0 8px 32px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.16); }
-    .biz-card--front { background: var(--cream); padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
-    .biz-card--back { background: var(--ink); display: flex; align-items: center; justify-content: center; }
-
-    .linkedin-banner { width: 100%; max-width: 1000px; height: 250px; background: var(--cream); border-radius: 8px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; box-shadow: 0 2px 8px rgba(26,22,18,0.1); overflow: hidden; position: relative; }
-    .linkedin-banner__accent { position: absolute; right: 0; top: 0; bottom: 0; width: 6px; background: var(--clay); }
-
-    .email-sig-wrapper { background: var(--white); border-radius: 10px; padding: 40px; border: 1px solid rgba(26,22,18,0.06); }
-
-    /* Usage */
-    .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .usage-card { background: var(--white); border-radius: 8px; padding: 24px; border: 1px solid rgba(26,22,18,0.06); }
-    .usage-card__title { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
-    .usage-card--do .usage-card__title { color: #2E6E4E; }
-    .usage-card--dont .usage-card__title { color: #8B2E2E; }
-    .usage-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .usage-list li { font-size: 12px; line-height: 1.5; color: var(--stone); padding-left: 18px; position: relative; }
-    .usage-list li::before { position: absolute; left: 0; font-weight: 700; }
-    .usage-card--do .usage-list li::before { content: "✓"; color: #2E6E4E; }
-    .usage-card--dont .usage-list li::before { content: "✗"; color: #8B2E2E; }
+    :root { --ink:#1A1612; --clay:#C26244; --cream:#FAF8F5; --linen:#F0EBE3; --stone:#8A7D74; --white:#FFFFFF; }
+    body { font-family:'Inter',system-ui,sans-serif; background:var(--linen); color:var(--ink); padding:56px 40px 100px; }
+    .page-header { margin-bottom:60px; padding-bottom:24px; border-bottom:1px solid rgba(26,22,18,0.12); }
+    .page-header__back { font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--clay); text-decoration:none; display:inline-block; margin-bottom:16px; }
+    .page-header__back:hover { opacity:0.7; }
+    .page-header__eyebrow { font-size:10px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin-bottom:8px; }
+    .page-header__title { font-family:'Manrope',sans-serif; font-size:36px; font-weight:600; margin-bottom:8px; letter-spacing:-0.3px; }
+    .page-header__period { color:var(--clay); }
+    .page-header__desc { font-size:13px; color:var(--stone); line-height:1.7; max-width:600px; }
+    .change-banner { background:var(--ink); color:var(--cream); border-radius:8px; padding:16px 20px; margin-bottom:48px; font-size:12px; line-height:1.7; }
+    .change-banner strong { color:var(--clay); }
+    .section { margin-bottom:72px; }
+    .section-label { font-size:10px; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--stone); margin-bottom:20px; padding-bottom:8px; border-bottom:1px solid rgba(26,22,18,0.08); }
+    .section-note { font-size:11px; color:var(--stone); margin-top:12px; line-height:1.6; }
+    .logo-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+    .logo-tile { border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; height:200px; position:relative; }
+    .logo-tile__label { position:absolute; bottom:10px; right:14px; font-size:8.5px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; opacity:0.35; }
+    .logo-tile--cream { background:var(--cream); }
+    .logo-tile--cream .logo-tile__label { color:var(--ink); }
+    .logo-tile--white { background:var(--white); border:1px solid rgba(26,22,18,0.06); }
+    .logo-tile--white .logo-tile__label { color:var(--ink); }
+    .logo-tile--ink { background:var(--ink); }
+    .logo-tile--ink .logo-tile__label { color:rgba(250,248,245,0.4); }
+    .logo-tile--clay { background:var(--clay); }
+    .logo-tile--clay .logo-tile__label { color:rgba(250,248,245,0.5); }
+    .logo-tile--linen { background:var(--linen); border:1px solid rgba(26,22,18,0.06); }
+    .logo-tile--linen .logo-tile__label { color:var(--stone); }
+    .mg2 { display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .mg2__square { border-radius:14px; display:flex; align-items:center; justify-content:center; }
+    .mg2__letters { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; letter-spacing:-3px; line-height:1; color:var(--cream); }
+    .mg2__label { font-family:'Inter',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.26em; color:var(--clay); }
+    .scale-row { display:flex; align-items:flex-end; gap:40px; flex-wrap:wrap; background:var(--white); border-radius:10px; padding:36px; border:1px solid rgba(26,22,18,0.06); }
+    .scale-item { display:flex; flex-direction:column; gap:10px; }
+    .scale-item + .scale-item { border-left:1px solid rgba(26,22,18,0.08); padding-left:40px; }
+    .scale-label { font-size:9px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); }
+    .color-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px; }
+    .color-swatch { border-radius:8px; overflow:hidden; }
+    .color-swatch__chip { height:80px; }
+    .color-swatch__info { padding:12px; background:var(--white); border:1px solid rgba(26,22,18,0.06); border-top:none; }
+    .color-swatch__name { font-size:11px; font-weight:600; color:var(--ink); margin-bottom:2px; }
+    .color-swatch__hex { font-size:10px; font-family:monospace; color:var(--stone); margin-bottom:4px; }
+    .color-swatch__use { font-size:10px; color:var(--stone); line-height:1.4; }
+    .card-scene { display:flex; gap:24px; flex-wrap:wrap; align-items:flex-start; padding:48px; background:var(--stone); border-radius:12px; }
+    .biz-card { width:420px; height:240px; border-radius:6px; flex-shrink:0; box-shadow:0 8px 32px rgba(0,0,0,0.28),0 2px 8px rgba(0,0,0,0.16); }
+    .biz-card--front { background:var(--cream); padding:32px; display:flex; flex-direction:column; justify-content:space-between; }
+    .biz-card--back { background:var(--ink); display:flex; align-items:center; justify-content:center; }
+    .linkedin-banner { width:100%; max-width:1000px; height:250px; background:var(--cream); border-radius:8px; display:flex; align-items:center; justify-content:space-between; padding:0 64px; box-shadow:0 2px 8px rgba(26,22,18,0.1); overflow:hidden; position:relative; }
+    .linkedin-banner__accent { position:absolute; right:0; top:0; bottom:0; width:6px; background:var(--clay); }
+    .email-sig-wrapper { background:var(--white); border-radius:10px; padding:40px; border:1px solid rgba(26,22,18,0.06); }
+    .usage-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .usage-card { background:var(--white); border-radius:8px; padding:24px; border:1px solid rgba(26,22,18,0.06); }
+    .usage-card__title { font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:16px; }
+    .usage-card--do .usage-card__title { color:#2E6E4E; }
+    .usage-card--dont .usage-card__title { color:#8B2E2E; }
+    .usage-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .usage-list li { font-size:12px; line-height:1.5; color:var(--stone); padding-left:18px; position:relative; }
+    .usage-list li::before { position:absolute; left:0; font-weight:700; }
+    .usage-card--do .usage-list li::before { content:"✓"; color:#2E6E4E; }
+    .usage-card--dont .usage-list li::before { content:"✗"; color:#8B2E2E; }
   </style>
 </head>
 <body>
@@ -104,261 +75,246 @@
 <div class="page-header">
   <a class="page-header__back" href="index.html">← Logo Concepts</a>
   <p class="page-header__eyebrow">Brand Identity System — v2</p>
-  <h1 class="page-header__title">Plain Terms.</h1>
-  <p class="page-header__desc">Updated per peer feedback: “Consulting” removed from the mark, MG-2 centered as primary monogram, WM-2 tracking corrected. Legal entity remains Plain Terms Consulting LLC.</p>
+  <h1 class="page-header__title">Plain Terms<span class="page-header__period">.</span></h1>
+  <p class="page-header__desc">Updated per peer feedback. “Consulting” removed from the mark. MG-2 (square) is the monogram. WM-2 kerning fixed. Legal entity remains Plain Terms Consulting LLC.</p>
 </div>
 
 <div class="change-banner">
-  <strong>What changed in v2:</strong> “Consulting” is gone from all marks — the company is just <em>Plain Terms.</em> in the brand. · MG-1 replaced by <strong>MG-2</strong> (square container, centered) as the monogram. · WM-2 tracking on PLAIN adjusted to match TERMS width. · WM-3 retired.
+  <strong>What changed in v2:</strong> “Consulting” gone from all marks · WM-1 now has a stacked variant · WM-2 kerning fixed with SVG textLength (both lines guaranteed equal width) · MG-2 square centered as monogram · WM-3 retired
 </div>
 
 
-<!-- ═══════════ 01 — WORDMARK PRIMARY ═══════════ -->
+<!-- WM-1 -->
 <div class="section">
   <p class="section-label">01 — Primary Wordmark — WM-1</p>
   <div class="logo-grid">
-
     <div class="logo-tile logo-tile--cream">
-      <div class="wm1" style="font-size:44px; color:var(--ink);">Plain Terms<span class="wm1__period">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <span class="logo-tile__label">Cream — Primary</span>
     </div>
-
     <div class="logo-tile logo-tile--white">
-      <div class="wm1" style="font-size:44px; color:var(--ink);">Plain Terms<span class="wm1__period">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <span class="logo-tile__label">White</span>
     </div>
-
     <div class="logo-tile logo-tile--ink">
-      <div class="wm1" style="font-size:44px; color:var(--cream);">Plain Terms<span class="wm1__period">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <span class="logo-tile__label">Ink — Reverse</span>
     </div>
-
     <div class="logo-tile logo-tile--clay">
-      <div class="wm1" style="font-size:44px; color:var(--cream);">Plain Terms<span style="color:rgba(250,248,245,0.6);">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:rgba(250,248,245,0.6);">.</span></div>
       <span class="logo-tile__label">Clay — Special</span>
     </div>
+  </div>
 
+  <p style="font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--stone);margin-top:20px;margin-bottom:12px;">Stacked Variant</p>
+  <div class="logo-grid">
+    <div class="logo-tile logo-tile--cream">
+      <div style="line-height:1.05;">
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Plain</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div>
+      </div>
+      <span class="logo-tile__label">Stacked — Cream</span>
+    </div>
+    <div class="logo-tile logo-tile--white">
+      <div style="line-height:1.05;">
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Plain</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div>
+      </div>
+      <span class="logo-tile__label">Stacked — White</span>
+    </div>
+    <div class="logo-tile logo-tile--ink">
+      <div style="line-height:1.05;">
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Plain</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div>
+      </div>
+      <span class="logo-tile__label">Stacked — Ink</span>
+    </div>
+    <div class="logo-tile logo-tile--clay">
+      <div style="line-height:1.05;">
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Plain</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Terms<span style="color:rgba(250,248,245,0.6);">.</span></div>
+      </div>
+      <span class="logo-tile__label">Stacked — Clay</span>
+    </div>
   </div>
 </div>
 
 
-<!-- ═══════════ 02 — WORDMARK ALTERNATE ═══════════ -->
+<!-- WM-2 -->
 <div class="section">
   <p class="section-label">02 — Alternate Wordmark — WM-2 (Bold / Merch / Decks)</p>
   <div class="logo-grid">
-
     <div class="logo-tile logo-tile--cream">
-      <div class="wm2">
-        <div class="wm2__plain" style="font-size:40px; color:var(--ink);">PLAIN</div>
-        <div class="wm2__terms" style="font-size:40px; color:var(--ink);">TERMS</div>
-        <div class="wm2__rule"></div>
-      </div>
+      <svg viewBox="0 0 200 97" width="200">
+        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">PLAIN</text>
+        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">TERMS</text>
+        <line x1="0" y1="95" x2="200" y2="95" stroke="#C26244" stroke-width="1" opacity="0.5"/>
+      </svg>
       <span class="logo-tile__label">Cream</span>
     </div>
-
     <div class="logo-tile logo-tile--white">
-      <div class="wm2">
-        <div class="wm2__plain" style="font-size:40px; color:var(--ink);">PLAIN</div>
-        <div class="wm2__terms" style="font-size:40px; color:var(--ink);">TERMS</div>
-        <div class="wm2__rule"></div>
-      </div>
+      <svg viewBox="0 0 200 97" width="200">
+        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">PLAIN</text>
+        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">TERMS</text>
+        <line x1="0" y1="95" x2="200" y2="95" stroke="#C26244" stroke-width="1" opacity="0.5"/>
+      </svg>
       <span class="logo-tile__label">White</span>
     </div>
-
     <div class="logo-tile logo-tile--ink">
-      <div class="wm2">
-        <div class="wm2__plain" style="font-size:40px; color:var(--cream);">PLAIN</div>
-        <div class="wm2__terms" style="font-size:40px; color:var(--cream);">TERMS</div>
-        <div class="wm2__rule" style="background:var(--cream);"></div>
-      </div>
+      <svg viewBox="0 0 200 97" width="200">
+        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">PLAIN</text>
+        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">TERMS</text>
+        <line x1="0" y1="95" x2="200" y2="95" stroke="#FAF8F5" stroke-width="1" opacity="0.25"/>
+      </svg>
       <span class="logo-tile__label">Ink — Reverse</span>
     </div>
-
     <div class="logo-tile logo-tile--clay">
-      <div class="wm2">
-        <div class="wm2__plain" style="font-size:40px; color:var(--cream);">PLAIN</div>
-        <div class="wm2__terms" style="font-size:40px; color:var(--cream);">TERMS</div>
-        <div class="wm2__rule" style="background:var(--cream); opacity:0.4;"></div>
-      </div>
+      <svg viewBox="0 0 200 97" width="200">
+        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">PLAIN</text>
+        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">TERMS</text>
+        <line x1="0" y1="95" x2="200" y2="95" stroke="#FAF8F5" stroke-width="1" opacity="0.3"/>
+      </svg>
       <span class="logo-tile__label">Clay — Merch</span>
     </div>
-
   </div>
-  <p style="font-size:11px; color:var(--stone); margin-top:12px; line-height:1.6;">“PLAIN” tracking increased to 4.5px so both lines read equal width. Use WM-2 for bold contexts — deck covers, merchandise, social graphics. WM-1 is the primary for everyday use.</p>
+  <p class="section-note">SVG textLength guarantees both lines are pixel-identical width. Use WM-2 for deck covers, social graphics, and merchandise. WM-1 is the everyday primary.</p>
 </div>
 
 
-<!-- ═══════════ 03 — MONOGRAM MG-2 ═══════════ -->
+<!-- MG-2 -->
 <div class="section">
-  <p class="section-label">03 — Monogram — MG-2 (Primary Icon)</p>
+  <p class="section-label">03 — Monogram — MG-2 (Icon / Avatar / Small Contexts)</p>
   <div class="logo-grid">
-
-    <!-- CREAM bg: ink square, white PT, clay label — Sam’s specified primary colorway -->
     <div class="logo-tile logo-tile--cream">
       <div class="mg2">
-        <div class="mg2__square" style="width:80px; height:80px; background:var(--ink);">
-          <span class="mg2__letters" style="font-size:34px;">PT</span>
-        </div>
+        <div class="mg2__square" style="width:80px;height:80px;background:var(--ink);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
         <div class="mg2__label" style="font-size:8px;">Plain Terms</div>
       </div>
       <span class="logo-tile__label">Cream — Primary</span>
     </div>
-
-    <!-- WHITE bg: same treatment -->
     <div class="logo-tile logo-tile--white">
       <div class="mg2">
-        <div class="mg2__square" style="width:80px; height:80px; background:var(--ink);">
-          <span class="mg2__letters" style="font-size:34px;">PT</span>
-        </div>
+        <div class="mg2__square" style="width:80px;height:80px;background:var(--ink);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
         <div class="mg2__label" style="font-size:8px;">Plain Terms</div>
       </div>
       <span class="logo-tile__label">White</span>
     </div>
-
-    <!-- INK bg: clay square, white PT, clay label -->
     <div class="logo-tile logo-tile--ink">
       <div class="mg2">
-        <div class="mg2__square" style="width:80px; height:80px; background:var(--clay);">
-          <span class="mg2__letters" style="font-size:34px;">PT</span>
-        </div>
+        <div class="mg2__square" style="width:80px;height:80px;background:var(--clay);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
         <div class="mg2__label" style="font-size:8px;">Plain Terms</div>
       </div>
       <span class="logo-tile__label">Ink — Reverse</span>
     </div>
-
-    <!-- Avatar sizes — standalone marks -->
-    <div class="logo-tile logo-tile--linen" style="background:var(--linen); border:1px solid rgba(26,22,18,0.06);">
-      <div style="display:flex; align-items:flex-end; gap:20px;">
-        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-          <div style="width:72px; height:72px; background:var(--ink); border-radius:14px; display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:30px; color:#FAF8F5; letter-spacing:-3px;">PT</span>
-          </div>
-          <span style="font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone);">72px</span>
+    <div class="logo-tile logo-tile--linen">
+      <div style="display:flex;align-items:flex-end;gap:20px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:72px;height:72px;background:var(--ink);border-radius:14px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:30px;color:#FAF8F5;letter-spacing:-3px;">PT</span></div>
+          <span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">72px</span>
         </div>
-        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-          <div style="width:48px; height:48px; background:var(--ink); border-radius:10px; display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:20px; color:#FAF8F5; letter-spacing:-2px;">PT</span>
-          </div>
-          <span style="font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone);">48px</span>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:48px;height:48px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:20px;color:#FAF8F5;letter-spacing:-2px;">PT</span></div>
+          <span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">48px</span>
         </div>
-        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-          <div style="width:32px; height:32px; background:var(--ink); border-radius:6px; display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:13px; color:#FAF8F5; letter-spacing:-1px;">PT</span>
-          </div>
-          <span style="font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone);">32px</span>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:32px;height:32px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:#FAF8F5;letter-spacing:-1px;">PT</span></div>
+          <span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">32px</span>
         </div>
       </div>
-      <span class="logo-tile__label" style="color:var(--stone);">Avatar Sizes</span>
+      <span class="logo-tile__label">Avatar Sizes</span>
     </div>
-
   </div>
 </div>
 
 
-<!-- ═══════════ 04 — SIZE SCALE ═══════════ -->
+<!-- SIZE SCALE -->
 <div class="section">
   <p class="section-label">04 — Size Scale — WM-1</p>
   <div class="scale-row">
     <div class="scale-item">
-      <div style="font-family:'Manrope',sans-serif; font-size:52px; font-weight:600; color:var(--ink); letter-spacing:-0.5px; line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:52px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <span class="scale-label">Print / Presentation — 52px+</span>
     </div>
     <div class="scale-item">
-      <div style="font-family:'Manrope',sans-serif; font-size:32px; font-weight:600; color:var(--ink); letter-spacing:-0.3px; line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <span class="scale-label">Website / Docs — 32px</span>
     </div>
     <div class="scale-item">
-      <div style="font-family:'Manrope',sans-serif; font-size:20px; font-weight:600; color:var(--ink); line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <span class="scale-label">Email / Footer — 20px</span>
     </div>
   </div>
 </div>
 
 
-<!-- ═══════════ 05 — COLOR ═══════════ -->
+<!-- COLOR -->
 <div class="section">
   <p class="section-label">05 — Color System</p>
   <div class="color-grid">
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#1A1612;"></div><div class="color-swatch__info"><div class="color-swatch__name">Ink</div><div class="color-swatch__hex">#1A1612</div><div class="color-swatch__use">Primary text, wordmark, MG-2 square</div></div></div>
-    <div class="color-swatch"><div class="color-swatch__chip" style="background:#C26244;"></div><div class="color-swatch__info"><div class="color-swatch__name">Clay</div><div class="color-swatch__hex">#C26244</div><div class="color-swatch__use">The period. Accent labels, rules, links. MG-2 dark-bg square.</div></div></div>
-    <div class="color-swatch"><div class="color-swatch__chip" style="background:#FAF8F5; border:1px solid #E8E0D8;"></div><div class="color-swatch__info"><div class="color-swatch__name">Cream</div><div class="color-swatch__hex">#FAF8F5</div><div class="color-swatch__use">Primary background, PT letters inside MG-2</div></div></div>
+    <div class="color-swatch"><div class="color-swatch__chip" style="background:#C26244;"></div><div class="color-swatch__info"><div class="color-swatch__name">Clay</div><div class="color-swatch__hex">#C26244</div><div class="color-swatch__use">The period. Labels, rules, links. MG-2 on dark.</div></div></div>
+    <div class="color-swatch"><div class="color-swatch__chip" style="background:#FAF8F5;border:1px solid #E8E0D8;"></div><div class="color-swatch__info"><div class="color-swatch__name">Cream</div><div class="color-swatch__hex">#FAF8F5</div><div class="color-swatch__use">Primary background. PT letters inside MG-2.</div></div></div>
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#F0EBE3;"></div><div class="color-swatch__info"><div class="color-swatch__name">Linen</div><div class="color-swatch__hex">#F0EBE3</div><div class="color-swatch__use">Document backgrounds, card surfaces</div></div></div>
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#8A7D74;"></div><div class="color-swatch__info"><div class="color-swatch__name">Stone</div><div class="color-swatch__hex">#8A7D74</div><div class="color-swatch__use">Supporting text, labels, metadata</div></div></div>
-    <div class="color-swatch"><div class="color-swatch__chip" style="background:#FFFFFF; border:1px solid #E8E0D8;"></div><div class="color-swatch__info"><div class="color-swatch__name">White</div><div class="color-swatch__hex">#FFFFFF</div><div class="color-swatch__use">High-contrast surfaces, cards</div></div></div>
+    <div class="color-swatch"><div class="color-swatch__chip" style="background:#FFFFFF;border:1px solid #E8E0D8;"></div><div class="color-swatch__info"><div class="color-swatch__name">White</div><div class="color-swatch__hex">#FFFFFF</div><div class="color-swatch__use">High-contrast surfaces, cards</div></div></div>
   </div>
 </div>
 
 
-<!-- ═══════════ 06 — APPLICATIONS ═══════════ -->
+<!-- APPLICATIONS -->
 <div class="section">
   <p class="section-label">06 — Brand Applications</p>
-
-  <p style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:16px;">Business Card</p>
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:16px;">Business Card</p>
   <div class="card-scene" style="margin-bottom:40px;">
-    <!-- Front -->
     <div class="biz-card biz-card--front">
-      <div style="font-family:'Manrope',sans-serif; font-size:28px; font-weight:600; color:var(--ink); letter-spacing:-0.3px; line-height:1;">
-        Plain Terms<span style="color:var(--clay);">.</span>
-      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
       <div>
-        <div style="font-size:11px; font-weight:600; font-family:'Manrope',sans-serif; color:var(--ink);">Sam Evans</div>
-        <div style="font-size:9px; font-weight:500; color:var(--stone); text-transform:uppercase; letter-spacing:0.12em;">Founder</div>
-        <div style="width:24px; height:0.5px; background:var(--clay); opacity:0.5; margin:5px 0;"></div>
-        <div style="font-size:9px; color:var(--stone); line-height:1.7;">sam@plaintrms.co<br>plaintrms.co<br>Denver, CO</div>
+        <div style="font-size:11px;font-weight:600;font-family:'Manrope',sans-serif;color:var(--ink);">Sam Evans</div>
+        <div style="font-size:9px;font-weight:500;color:var(--stone);text-transform:uppercase;letter-spacing:0.12em;">Founder</div>
+        <div style="width:24px;height:0.5px;background:var(--clay);opacity:0.5;margin:5px 0;"></div>
+        <div style="font-size:9px;color:var(--stone);line-height:1.7;">sam@plaintrms.co<br>plaintrms.co<br>Denver, CO</div>
       </div>
     </div>
-    <!-- Back -->
     <div class="biz-card biz-card--back">
-      <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
-        <div style="width:80px; height:80px; background:var(--clay); border-radius:14px; display:flex; align-items:center; justify-content:center;">
-          <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:34px; color:#FAF8F5; letter-spacing:-3px;">PT</span>
-        </div>
-        <div style="font-family:'Inter',sans-serif; font-size:8px; font-weight:500; letter-spacing:0.28em; color:var(--clay); text-transform:uppercase;">Plain Terms</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+        <div style="width:80px;height:80px;background:var(--clay);border-radius:14px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:34px;color:#FAF8F5;letter-spacing:-3px;">PT</span></div>
+        <div style="font-family:'Inter',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.28em;color:var(--clay);text-transform:uppercase;">Plain Terms</div>
       </div>
     </div>
   </div>
-
-  <p style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:16px;">LinkedIn Banner</p>
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:16px;">LinkedIn Banner</p>
   <div style="margin-bottom:40px;">
     <div class="linkedin-banner">
-      <div style="display:flex; flex-direction:column; gap:16px;">
-        <div style="font-family:'Manrope',sans-serif; font-size:32px; font-weight:600; color:var(--ink); letter-spacing:-0.3px; line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <div style="height:1px; width:32px; background:var(--clay); opacity:0.4;"></div>
-          <div style="font-size:10px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone);">Denver · Boulder</div>
-        </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
+        <div style="display:flex;align-items:center;gap:10px;"><div style="height:1px;width:32px;background:var(--clay);opacity:0.4;"></div><div style="font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">Denver · Boulder</div></div>
       </div>
       <div style="text-align:right;">
-        <div style="font-family:'Manrope',sans-serif; font-size:18px; font-weight:600; color:var(--ink); line-height:1.4; max-width:320px;">AI tools that work<br>for real businesses.</div>
-        <div style="font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--clay); margin-top:6px;">No jargon. No hype. Just results.</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.4;max-width:320px;">AI tools that work<br>for real businesses.</div>
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--clay);margin-top:6px;">No jargon. No hype. Just results.</div>
       </div>
       <div class="linkedin-banner__accent"></div>
     </div>
   </div>
-
-  <p style="font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:16px;">Email Signature</p>
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:16px;">Email Signature</p>
   <div class="email-sig-wrapper">
-    <p style="font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--stone); margin-bottom:24px;">Preview — copy HTML below for Gmail / Outlook</p>
-    <div style="font-family:'Inter',sans-serif; max-width:480px;">
-      <div style="font-size:15px; font-weight:600; color:var(--ink); font-family:'Manrope',sans-serif; margin-bottom:2px;">Sam Evans</div>
-      <div style="font-size:11px; color:var(--stone); margin-bottom:10px;">Founder, Plain Terms Consulting</div>
-      <div style="height:1px; background:rgba(26,22,18,0.1); margin-bottom:12px;"></div>
-      <div style="font-family:'Manrope',sans-serif; font-size:18px; font-weight:600; color:var(--ink); line-height:1; margin-bottom:10px;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <div style="font-size:11px; color:var(--stone); line-height:1.8;">
-        <a href="mailto:sam@plaintrms.co" style="color:var(--clay); text-decoration:none;">sam@plaintrms.co</a><br>
-        <a href="https://plaintrms.co" style="color:var(--clay); text-decoration:none;">plaintrms.co</a><br>
-        Denver, CO
-      </div>
+    <p style="font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--stone);margin-bottom:24px;">Preview — copy HTML below for Gmail / Outlook</p>
+    <div style="font-family:'Inter',sans-serif;max-width:480px;">
+      <div style="font-size:15px;font-weight:600;color:var(--ink);font-family:'Manrope',sans-serif;margin-bottom:2px;">Sam Evans</div>
+      <div style="font-size:11px;color:var(--stone);margin-bottom:10px;">Founder, Plain Terms Consulting</div>
+      <div style="height:1px;background:rgba(26,22,18,0.1);margin-bottom:12px;"></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;margin-bottom:10px;">Plain Terms<span style="color:var(--clay);">.</span></div>
+      <div style="font-size:11px;color:var(--stone);line-height:1.8;"><a href="mailto:sam@plaintrms.co" style="color:var(--clay);text-decoration:none;">sam@plaintrms.co</a><br><a href="https://plaintrms.co" style="color:var(--clay);text-decoration:none;">plaintrms.co</a><br>Denver, CO</div>
     </div>
-    <div style="margin-top:28px; padding:16px; background:var(--linen); border-radius:6px; border:1px solid rgba(26,22,18,0.08);">
-      <p style="font-size:9px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); margin-bottom:10px;">Copy this HTML into Gmail / Outlook signature settings</p>
-      <pre style="font-size:10px; line-height:1.7; color:#5A4E47; white-space:pre-wrap; font-family:monospace; overflow-x:auto;">&lt;table style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px; color:#1A1612; border-collapse:collapse;"&gt;
+    <div style="margin-top:28px;padding:16px;background:var(--linen);border-radius:6px;border:1px solid rgba(26,22,18,0.08);">
+      <p style="font-size:9px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--stone);margin-bottom:10px;">Copy into Gmail / Outlook signature settings</p>
+      <pre style="font-size:10px;line-height:1.7;color:#5A4E47;white-space:pre-wrap;font-family:monospace;overflow-x:auto;">&lt;table style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#1A1612;border-collapse:collapse;"&gt;
   &lt;tr&gt;&lt;td style="padding-bottom:2px;"&gt;&lt;strong style="font-size:14px;"&gt;Sam Evans&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td style="padding-bottom:10px; color:#8A7D74; font-size:12px;"&gt;Founder, Plain Terms Consulting&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td style="padding-bottom:10px; border-top:1px solid #E8E0D8; padding-top:10px;"&gt;
-    &lt;span style="font-family:'Georgia',serif; font-size:20px; font-weight:700; color:#1A1612;"&gt;Plain Terms&lt;/span&gt;&lt;span style="font-size:20px; font-weight:700; color:#C26244;"&gt;.&lt;/span&gt;
+  &lt;tr&gt;&lt;td style="padding-bottom:10px;color:#8A7D74;font-size:12px;"&gt;Founder, Plain Terms Consulting&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td style="padding-bottom:10px;border-top:1px solid #E8E0D8;padding-top:10px;"&gt;
+    &lt;span style="font-size:20px;font-weight:700;color:#1A1612;"&gt;Plain Terms&lt;/span&gt;&lt;span style="font-size:20px;font-weight:700;color:#C26244;"&gt;.&lt;/span&gt;
   &lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td style="font-size:12px; color:#8A7D74; line-height:1.8;"&gt;
+  &lt;tr&gt;&lt;td style="font-size:12px;color:#8A7D74;line-height:1.8;"&gt;
     &lt;a href="mailto:sam@plaintrms.co" style="color:#C26244;"&gt;sam@plaintrms.co&lt;/a&gt;&lt;br&gt;
     &lt;a href="https://plaintrms.co" style="color:#C26244;"&gt;plaintrms.co&lt;/a&gt;
   &lt;/td&gt;&lt;/tr&gt;
@@ -368,39 +324,36 @@
 </div>
 
 
-<!-- ═══════════ 07 — USAGE ═══════════ -->
+<!-- USAGE -->
 <div class="section">
   <p class="section-label">07 — Usage Guide</p>
   <div class="usage-grid">
     <div class="usage-card usage-card--do">
       <div class="usage-card__title">Do</div>
       <ul class="usage-list">
-        <li>The clay period is part of the mark — always include it in professional contexts</li>
-        <li>WM-1 “Plain Terms.” is the everyday mark — website, email sig, proposals, invoices</li>
-        <li>WM-2 “PLAIN / TERMS” is for bold applications — decks, social graphics, merch, print</li>
-        <li>MG-2 square is for avatars, favicons, embossed materials, and anywhere WM-1 won’t fit</li>
-        <li>On cream/white: ink square + white PT + clay label. On dark: clay square + white PT</li>
-        <li>Full legal name “Plain Terms Consulting LLC” in contracts, invoices, and legal docs</li>
+        <li>The clay period is part of the mark — always include it</li>
+        <li>WM-1 “Plain Terms.” is the everyday primary — website, email, proposals</li>
+        <li>WM-1 Stacked for square formats — social profile banners, printed collateral</li>
+        <li>WM-2 for bold contexts — deck covers, merch, social graphics, large print</li>
+        <li>MG-2: ink square on light backgrounds; clay square on dark backgrounds</li>
+        <li>Full legal name “Plain Terms Consulting LLC” in contracts and legal docs</li>
       </ul>
     </div>
     <div class="usage-card usage-card--dont">
       <div class="usage-card__title">Don’t</div>
       <ul class="usage-list">
-        <li>Don’t add “Consulting” back to the logo — the brand is just Plain Terms.</li>
-        <li>Don’t use the period in a different color — it’s always clay (#C26244)</li>
-        <li>Don’t use WM-2 where WM-1 fits — all-caps is for bold contexts, not daily use</li>
-        <li>Don’t left-align the MG-2 monogram — always center</li>
-        <li>Don’t use clay as a large background fill — accent only</li>
+        <li>Don’t add “Consulting” to the logo — the brand mark is just Plain Terms.</li>
+        <li>Don’t use the period in any color other than clay (#C26244)</li>
+        <li>Don’t use WM-2 where WM-1 fits — all-caps is for bold contexts only</li>
+        <li>Don’t left-align the MG-2 monogram or its label</li>
+        <li>Don’t use clay as a large background fill — it’s an accent</li>
         <li>Don’t use blue, purple, or green — not in the palette</li>
       </ul>
     </div>
   </div>
 </div>
 
-
-<p style="font-size:11px; color:var(--stone); text-align:center; margin-top:16px;">
-  Plain Terms Consulting LLC · Brand System v2 · June 2026
-</p>
+<p style="font-size:11px;color:var(--stone);text-align:center;margin-top:16px;">Plain Terms Consulting LLC · Brand System v2 · June 2026</p>
 
 </body>
 </html>
