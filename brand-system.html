@@ -36,10 +36,8 @@
     .logo-tile--clay .logo-tile__label { color:rgba(250,248,245,0.5); }
     .logo-tile--linen { background:var(--linen); border:1px solid rgba(26,22,18,0.06); }
     .logo-tile--linen .logo-tile__label { color:var(--stone); }
-    .mg2 { display:flex; flex-direction:column; align-items:center; gap:12px; }
     .mg2__square { border-radius:14px; display:flex; align-items:center; justify-content:center; }
     .mg2__letters { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; letter-spacing:-3px; line-height:1; color:var(--cream); }
-    .mg2__label { font-family:'Inter',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.26em; color:var(--clay); }
     .scale-row { display:flex; align-items:flex-end; gap:40px; flex-wrap:wrap; background:var(--white); border-radius:10px; padding:36px; border:1px solid rgba(26,22,18,0.06); }
     .scale-item { display:flex; flex-direction:column; gap:10px; }
     .scale-item + .scale-item { border-left:1px solid rgba(26,22,18,0.08); padding-left:40px; }
@@ -76,11 +74,11 @@
   <a class="page-header__back" href="index.html">← Logo Concepts</a>
   <p class="page-header__eyebrow">Brand Identity System — v2</p>
   <h1 class="page-header__title">Plain Terms<span class="page-header__period">.</span></h1>
-  <p class="page-header__desc">Updated per peer feedback. “Consulting” removed from the mark. MG-2 (square) is the monogram. WM-2 kerning fixed. Legal entity remains Plain Terms Consulting LLC.</p>
+  <p class="page-header__desc">“Consulting” removed from the mark. WM-1 + stacked variant. WM-2 kerning fixed. MG-2 is the standalone icon mark. Legal entity: Plain Terms Consulting LLC.</p>
 </div>
 
 <div class="change-banner">
-  <strong>What changed in v2:</strong> “Consulting” gone from all marks · WM-1 now has a stacked variant · WM-2 kerning fixed with SVG textLength (both lines guaranteed equal width) · MG-2 square centered as monogram · WM-3 retired
+  <strong>Brand System v2:</strong> “Consulting” gone from all marks · WM-1 now has a stacked variant · WM-2 kerning fixed (SVG textLength) · MG-2 square is the standalone icon · WM-3 retired
 </div>
 
 
@@ -88,54 +86,17 @@
 <div class="section">
   <p class="section-label">01 — Primary Wordmark — WM-1</p>
   <div class="logo-grid">
-    <div class="logo-tile logo-tile--cream">
-      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <span class="logo-tile__label">Cream — Primary</span>
-    </div>
-    <div class="logo-tile logo-tile--white">
-      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <span class="logo-tile__label">White</span>
-    </div>
-    <div class="logo-tile logo-tile--ink">
-      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <span class="logo-tile__label">Ink — Reverse</span>
-    </div>
-    <div class="logo-tile logo-tile--clay">
-      <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:rgba(250,248,245,0.6);">.</span></div>
-      <span class="logo-tile__label">Clay — Special</span>
-    </div>
+    <div class="logo-tile logo-tile--cream"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div><span class="logo-tile__label">Cream — Primary</span></div>
+    <div class="logo-tile logo-tile--white"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div><span class="logo-tile__label">White</span></div>
+    <div class="logo-tile logo-tile--ink"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div><span class="logo-tile__label">Ink — Reverse</span></div>
+    <div class="logo-tile logo-tile--clay"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:rgba(250,248,245,0.6);">.</span></div><span class="logo-tile__label">Clay — Special</span></div>
   </div>
-
   <p style="font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--stone);margin-top:20px;margin-bottom:12px;">Stacked Variant</p>
   <div class="logo-grid">
-    <div class="logo-tile logo-tile--cream">
-      <div style="line-height:1.05;">
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Plain</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div>
-      </div>
-      <span class="logo-tile__label">Stacked — Cream</span>
-    </div>
-    <div class="logo-tile logo-tile--white">
-      <div style="line-height:1.05;">
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Plain</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div>
-      </div>
-      <span class="logo-tile__label">Stacked — White</span>
-    </div>
-    <div class="logo-tile logo-tile--ink">
-      <div style="line-height:1.05;">
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Plain</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div>
-      </div>
-      <span class="logo-tile__label">Stacked — Ink</span>
-    </div>
-    <div class="logo-tile logo-tile--clay">
-      <div style="line-height:1.05;">
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Plain</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Terms<span style="color:rgba(250,248,245,0.6);">.</span></div>
-      </div>
-      <span class="logo-tile__label">Stacked — Clay</span>
-    </div>
+    <div class="logo-tile logo-tile--cream"><div style="line-height:1.05;"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Plain</div><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div></div><span class="logo-tile__label">Stacked — Cream</span></div>
+    <div class="logo-tile logo-tile--white"><div style="line-height:1.05;"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Plain</div><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div></div><span class="logo-tile__label">Stacked — White</span></div>
+    <div class="logo-tile logo-tile--ink"><div style="line-height:1.05;"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Plain</div><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Terms<span style="color:var(--clay);">.</span></div></div><span class="logo-tile__label">Stacked — Ink</span></div>
+    <div class="logo-tile logo-tile--clay"><div style="line-height:1.05;"><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Plain</div><div style="font-family:'Manrope',sans-serif;font-size:44px;font-weight:600;color:var(--cream);letter-spacing:-0.5px;">Terms<span style="color:rgba(250,248,245,0.6);">.</span></div></div><span class="logo-tile__label">Stacked — Clay</span></div>
   </div>
 </div>
 
@@ -145,35 +106,19 @@
   <p class="section-label">02 — Alternate Wordmark — WM-2 (Bold / Merch / Decks)</p>
   <div class="logo-grid">
     <div class="logo-tile logo-tile--cream">
-      <svg viewBox="0 0 200 97" width="200">
-        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">PLAIN</text>
-        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">TERMS</text>
-        <line x1="0" y1="95" x2="200" y2="95" stroke="#C26244" stroke-width="1" opacity="0.5"/>
-      </svg>
+      <svg viewBox="0 0 200 97" width="200"><text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">PLAIN</text><text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">TERMS</text><line x1="0" y1="95" x2="200" y2="95" stroke="#C26244" stroke-width="1" opacity="0.5"/></svg>
       <span class="logo-tile__label">Cream</span>
     </div>
     <div class="logo-tile logo-tile--white">
-      <svg viewBox="0 0 200 97" width="200">
-        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">PLAIN</text>
-        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">TERMS</text>
-        <line x1="0" y1="95" x2="200" y2="95" stroke="#C26244" stroke-width="1" opacity="0.5"/>
-      </svg>
+      <svg viewBox="0 0 200 97" width="200"><text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">PLAIN</text><text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#1A1612" textLength="200" lengthAdjust="spacing">TERMS</text><line x1="0" y1="95" x2="200" y2="95" stroke="#C26244" stroke-width="1" opacity="0.5"/></svg>
       <span class="logo-tile__label">White</span>
     </div>
     <div class="logo-tile logo-tile--ink">
-      <svg viewBox="0 0 200 97" width="200">
-        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">PLAIN</text>
-        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">TERMS</text>
-        <line x1="0" y1="95" x2="200" y2="95" stroke="#FAF8F5" stroke-width="1" opacity="0.25"/>
-      </svg>
+      <svg viewBox="0 0 200 97" width="200"><text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">PLAIN</text><text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">TERMS</text><line x1="0" y1="95" x2="200" y2="95" stroke="#FAF8F5" stroke-width="1" opacity="0.25"/></svg>
       <span class="logo-tile__label">Ink — Reverse</span>
     </div>
     <div class="logo-tile logo-tile--clay">
-      <svg viewBox="0 0 200 97" width="200">
-        <text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">PLAIN</text>
-        <text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">TERMS</text>
-        <line x1="0" y1="95" x2="200" y2="95" stroke="#FAF8F5" stroke-width="1" opacity="0.3"/>
-      </svg>
+      <svg viewBox="0 0 200 97" width="200"><text x="0" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">PLAIN</text><text x="0" y="88" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="700" fill="#FAF8F5" textLength="200" lengthAdjust="spacing">TERMS</text><line x1="0" y1="95" x2="200" y2="95" stroke="#FAF8F5" stroke-width="1" opacity="0.3"/></svg>
       <span class="logo-tile__label">Clay — Merch</span>
     </div>
   </div>
@@ -183,43 +128,25 @@
 
 <!-- MG-2 -->
 <div class="section">
-  <p class="section-label">03 — Monogram — MG-2 (Icon / Avatar / Small Contexts)</p>
+  <p class="section-label">03 — Monogram — MG-2 (Icon / Avatar)</p>
   <div class="logo-grid">
     <div class="logo-tile logo-tile--cream">
-      <div class="mg2">
-        <div class="mg2__square" style="width:80px;height:80px;background:var(--ink);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
-        <div class="mg2__label" style="font-size:8px;">Plain Terms</div>
-      </div>
+      <div class="mg2__square" style="width:80px;height:80px;background:var(--ink);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
       <span class="logo-tile__label">Cream — Primary</span>
     </div>
     <div class="logo-tile logo-tile--white">
-      <div class="mg2">
-        <div class="mg2__square" style="width:80px;height:80px;background:var(--ink);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
-        <div class="mg2__label" style="font-size:8px;">Plain Terms</div>
-      </div>
+      <div class="mg2__square" style="width:80px;height:80px;background:var(--ink);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
       <span class="logo-tile__label">White</span>
     </div>
     <div class="logo-tile logo-tile--ink">
-      <div class="mg2">
-        <div class="mg2__square" style="width:80px;height:80px;background:var(--clay);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
-        <div class="mg2__label" style="font-size:8px;">Plain Terms</div>
-      </div>
+      <div class="mg2__square" style="width:80px;height:80px;background:var(--clay);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
       <span class="logo-tile__label">Ink — Reverse</span>
     </div>
     <div class="logo-tile logo-tile--linen">
       <div style="display:flex;align-items:flex-end;gap:20px;">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-          <div style="width:72px;height:72px;background:var(--ink);border-radius:14px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:30px;color:#FAF8F5;letter-spacing:-3px;">PT</span></div>
-          <span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">72px</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-          <div style="width:48px;height:48px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:20px;color:#FAF8F5;letter-spacing:-2px;">PT</span></div>
-          <span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">48px</span>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-          <div style="width:32px;height:32px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:#FAF8F5;letter-spacing:-1px;">PT</span></div>
-          <span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">32px</span>
-        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:72px;height:72px;background:var(--ink);border-radius:14px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:30px;color:#FAF8F5;letter-spacing:-3px;">PT</span></div><span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">72px</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:48px;height:48px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:20px;color:#FAF8F5;letter-spacing:-2px;">PT</span></div><span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">48px</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:32px;height:32px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:#FAF8F5;letter-spacing:-1px;">PT</span></div><span style="font-size:8px;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">32px</span></div>
       </div>
       <span class="logo-tile__label">Avatar Sizes</span>
     </div>
@@ -231,18 +158,9 @@
 <div class="section">
   <p class="section-label">04 — Size Scale — WM-1</p>
   <div class="scale-row">
-    <div class="scale-item">
-      <div style="font-family:'Manrope',sans-serif;font-size:52px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <span class="scale-label">Print / Presentation — 52px+</span>
-    </div>
-    <div class="scale-item">
-      <div style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <span class="scale-label">Website / Docs — 32px</span>
-    </div>
-    <div class="scale-item">
-      <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <span class="scale-label">Email / Footer — 20px</span>
-    </div>
+    <div class="scale-item"><div style="font-family:'Manrope',sans-serif;font-size:52px;font-weight:600;color:var(--ink);letter-spacing:-0.5px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div><span class="scale-label">Print / Presentation — 52px+</span></div>
+    <div class="scale-item"><div style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div><span class="scale-label">Website / Docs — 32px</span></div>
+    <div class="scale-item"><div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:600;color:var(--ink);line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div><span class="scale-label">Email / Footer — 20px</span></div>
   </div>
 </div>
 
@@ -252,7 +170,7 @@
   <p class="section-label">05 — Color System</p>
   <div class="color-grid">
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#1A1612;"></div><div class="color-swatch__info"><div class="color-swatch__name">Ink</div><div class="color-swatch__hex">#1A1612</div><div class="color-swatch__use">Primary text, wordmark, MG-2 square</div></div></div>
-    <div class="color-swatch"><div class="color-swatch__chip" style="background:#C26244;"></div><div class="color-swatch__info"><div class="color-swatch__name">Clay</div><div class="color-swatch__hex">#C26244</div><div class="color-swatch__use">The period. Labels, rules, links. MG-2 on dark.</div></div></div>
+    <div class="color-swatch"><div class="color-swatch__chip" style="background:#C26244;"></div><div class="color-swatch__info"><div class="color-swatch__name">Clay</div><div class="color-swatch__hex">#C26244</div><div class="color-swatch__use">The period. Accent, rules, links. MG-2 on dark.</div></div></div>
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#FAF8F5;border:1px solid #E8E0D8;"></div><div class="color-swatch__info"><div class="color-swatch__name">Cream</div><div class="color-swatch__hex">#FAF8F5</div><div class="color-swatch__use">Primary background. PT letters inside MG-2.</div></div></div>
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#F0EBE3;"></div><div class="color-swatch__info"><div class="color-swatch__name">Linen</div><div class="color-swatch__hex">#F0EBE3</div><div class="color-swatch__use">Document backgrounds, card surfaces</div></div></div>
     <div class="color-swatch"><div class="color-swatch__chip" style="background:#8A7D74;"></div><div class="color-swatch__info"><div class="color-swatch__name">Stone</div><div class="color-swatch__hex">#8A7D74</div><div class="color-swatch__use">Supporting text, labels, metadata</div></div></div>
@@ -268,18 +186,10 @@
   <div class="card-scene" style="margin-bottom:40px;">
     <div class="biz-card biz-card--front">
       <div style="font-family:'Manrope',sans-serif;font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
-      <div>
-        <div style="font-size:11px;font-weight:600;font-family:'Manrope',sans-serif;color:var(--ink);">Sam Evans</div>
-        <div style="font-size:9px;font-weight:500;color:var(--stone);text-transform:uppercase;letter-spacing:0.12em;">Founder</div>
-        <div style="width:24px;height:0.5px;background:var(--clay);opacity:0.5;margin:5px 0;"></div>
-        <div style="font-size:9px;color:var(--stone);line-height:1.7;">sam@plaintrms.co<br>plaintrms.co<br>Denver, CO</div>
-      </div>
+      <div><div style="font-size:11px;font-weight:600;font-family:'Manrope',sans-serif;color:var(--ink);">Sam Evans</div><div style="font-size:9px;font-weight:500;color:var(--stone);text-transform:uppercase;letter-spacing:0.12em;">Founder</div><div style="width:24px;height:0.5px;background:var(--clay);opacity:0.5;margin:5px 0;"></div><div style="font-size:9px;color:var(--stone);line-height:1.7;">sam@plaintrms.co<br>plaintrms.co<br>Denver, CO</div></div>
     </div>
     <div class="biz-card biz-card--back">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
-        <div style="width:80px;height:80px;background:var(--clay);border-radius:14px;display:flex;align-items:center;justify-content:center;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:34px;color:#FAF8F5;letter-spacing:-3px;">PT</span></div>
-        <div style="font-family:'Inter',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.28em;color:var(--clay);text-transform:uppercase;">Plain Terms</div>
-      </div>
+      <div class="mg2__square" style="width:80px;height:80px;background:var(--clay);"><span class="mg2__letters" style="font-size:34px;">PT</span></div>
     </div>
   </div>
   <p style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);margin-bottom:16px;">LinkedIn Banner</p>
@@ -289,10 +199,7 @@
         <div style="font-family:'Manrope',sans-serif;font-size:32px;font-weight:600;color:var(--ink);letter-spacing:-0.3px;line-height:1;">Plain Terms<span style="color:var(--clay);">.</span></div>
         <div style="display:flex;align-items:center;gap:10px;"><div style="height:1px;width:32px;background:var(--clay);opacity:0.4;"></div><div style="font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);">Denver · Boulder</div></div>
       </div>
-      <div style="text-align:right;">
-        <div style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.4;max-width:320px;">AI tools that work<br>for real businesses.</div>
-        <div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--clay);margin-top:6px;">No jargon. No hype. Just results.</div>
-      </div>
+      <div style="text-align:right;"><div style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:600;color:var(--ink);line-height:1.4;max-width:320px;">AI tools that work<br>for real businesses.</div><div style="font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--clay);margin-top:6px;">No jargon. No hype. Just results.</div></div>
       <div class="linkedin-banner__accent"></div>
     </div>
   </div>
@@ -333,8 +240,8 @@
       <ul class="usage-list">
         <li>The clay period is part of the mark — always include it</li>
         <li>WM-1 “Plain Terms.” is the everyday primary — website, email, proposals</li>
-        <li>WM-1 Stacked for square formats — social profile banners, printed collateral</li>
-        <li>WM-2 for bold contexts — deck covers, merch, social graphics, large print</li>
+        <li>WM-1 Stacked for square formats — social banners, printed collateral</li>
+        <li>WM-2 for bold contexts only — deck covers, merch, large print, social graphics</li>
         <li>MG-2: ink square on light backgrounds; clay square on dark backgrounds</li>
         <li>Full legal name “Plain Terms Consulting LLC” in contracts and legal docs</li>
       </ul>
@@ -345,7 +252,7 @@
         <li>Don’t add “Consulting” to the logo — the brand mark is just Plain Terms.</li>
         <li>Don’t use the period in any color other than clay (#C26244)</li>
         <li>Don’t use WM-2 where WM-1 fits — all-caps is for bold contexts only</li>
-        <li>Don’t left-align the MG-2 monogram or its label</li>
+        <li>Don’t add text below the MG-2 square — the mark stands alone</li>
         <li>Don’t use clay as a large background fill — it’s an accent</li>
         <li>Don’t use blue, purple, or green — not in the palette</li>
       </ul>
